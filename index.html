@@ -1,0 +1,222 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Batala Philadelphia</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <meta name="description" content=""> 
+    <link rel="stylesheet" href="css/main.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script>
+      window.onscroll = function() {
+        growShrinkLogo()
+      };
+
+      function growShrinkLogo() {
+        var logo = document.getElementById("logo")
+        var border = document.getElementById("border")
+        if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+          logo.classList.add("shrink");
+          border.classList.add("hidden-xs");
+        } else {
+          logo.classList.remove("shrink");
+          border.classList.remove("hidden-xs");
+        }
+      }
+      </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1><a class="navbar-brand" href="./index.html"><img id="logo" class="img-responsive" alt="Batala Philadelphia" src="./images/logo.png"></a></h1>
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="https://www.facebook.com/pg/BatalaPhiladelphia/events/" target="_blank">Performances</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.instagram.com/batalaphl/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/BatalaPhiladelphia/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+      <div id="border" class="border-triangle"></div>
+    </nav>
+    
+    <main>
+
+      <!-- intro -->
+      <section class="intro">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-5 col-md-6 col-md-offset-6">
+
+              <h2>Batala <br class="visible-xs visible-sm" />Philadelphia</h2>
+              <p>
+                Our mission is to enrich and inspire our communities by providing an Afro-Brazillian musical and cultural experience. We accomplish this goal through arts education and live performances. Our distinct form of musical expression and cultural heritage from Salvador da Bahia, Brazil is open to all individuals regardless of experience or background.
+              </p>
+
+              <a class="link" href="./about.html"><i class="fa fa-bolt bullet"></i>More about Batala PHL</a>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <a href="#donate" class="btn btn-primary btn-donate down-arrow">Donate</a>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <a href="#book" class="btn btn-primary down-arrow">Book</a>
+                </div>      
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section><!-- /intro -->
+      <div class="border-stripe"></div>
+
+      <!-- contact -->
+      <section id="contact" class="contact">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-2 col-md-6">
+
+              <img class="img-responsive" alt="" src="./images/border-shells.png">
+              <h2>Talk to us!</h2>
+              <p>
+                <i class="fa fa-bolt bullet"></i>Want to drum?<i class="fa fa-bolt bullet"></i>Collaborate?<i class="fa fa-bolt bullet"></i><br />
+                <i class="fa fa-bolt bullet"></i>Ask us something?<i class="fa fa-bolt bullet"></i>Then reach out!<i class="fa fa-bolt bullet"></i>
+              </p>
+
+              <form>
+                <div class="form-group">
+                  <label for="contactName" class="sr-only">Name</label>
+                  <input id="contactName" class="form-control input-lg" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                  <label for="contactEmail" class="sr-only">Email</label>
+                  <input id="contactEmail" class="form-control input-lg" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                  <label for="contactCategory" class="sr-only">Choose a category</label>
+                  <select id="contactCategory" class="form-control input-lg">
+                    <option value="" disabled selected>Choose a category</option>
+                    <option value="join">Join</option>
+                    <option value="book">Book</option>
+                    <option value="support">Support</option>
+                    <option value="collaborate">Collaborate</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage" class="sr-only">Write your message here</label>
+                  <textarea id="contactMessage" class="form-control input-lg" placeholder="What's up?"></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Send</button>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </section><!-- /contact -->
+      <div class="border-stripe"></div>
+
+      <!-- call-to-actions -->
+      <section class="cta">
+        <div class="border-side-triangle hidden-xs"></div>
+        <div class="container-fluid">
+
+          <!-- cta: donate -->
+          <div id="donate" class="donate row">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-2 col-md-6 col-md-offset-1 bg-triangle">
+
+              <div class="content">
+                
+                <h2>Give <span>a little to make a big impact</span></h2>
+                <img class="img-responsive hidden-xs" alt="" src="./images/border-shells.png">
+                <p>
+                  <strong class="text-uppercase">Donate</strong> to help us grow and continue purchasing drums, maintaing equipment, renting practice space, costumes, etc...
+                </p>
+                <a class="btn btn-secondary down-arrow" href="https://www.paypal.com/">Donate</a>
+
+              </div>
+
+            </div>
+          </div>
+
+          <img class="img-responsive visible-xs" alt="" src="./images/border-shells.png">
+
+           <!-- cta: book -->
+           <div id="book" class="book row">
+              <div class="col-xs-12 col-sm-7 col-sm-offset-5 col-md-6 col-md-offset-5">
+                
+                <div class="content">
+                  
+                  <h2>Sustain <span>our mission</span></h2>
+                  <img class="img-responsive hidden-xs" alt="" src="./images/border-shells.png">
+                  <p>
+                    <strong class="text-uppercase">Book us</strong> for your next event!  Batala's infectious beats bring incredible energy and the urge to dance to community gatherings, night clubs, student events, corporate meetings, parades, marathons and private parties.
+                  </p>
+                  <a class="btn btn-secondary down-arrow" href="mailto:batala.philly@gmail.com">Book</a>
+
+                </div>
+
+              </div>
+            </div>
+
+        </div>
+      </section><!-- /call-to-action -->
+
+      <!-- social -->
+      <div class="border-stripe visible-xs"></div>
+      <aside class="social">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-8">
+              <h2>Connect with us!</h2>
+            </div>
+            <div class="col-xs-12 col-sm-4"></div>
+              <a href="https://www.instagram.com/batalaphl/" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.facebook.com/BatalaPhiladelphia/" target="_blank"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+      </aside><!-- /social -->
+              
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; Batala PHL 2018</p>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- individual js -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,10 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="33px" height="34.667px" viewBox="0 0 33 34.667" enable-background="new 0 0 33 34.667" xml:space="preserve">
+	<g id="Layer_1" display="none">
+		<path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M16.37,20.271C10.951,13.466,5.617,6.767,0.227-0.001 c10.781,0,21.449,0,32.281,0C27.137,6.745,21.797,13.452,16.37,20.271z"/>
+		<path display="inline" fill-rule="evenodd" clip-rule="evenodd" d="M0,7.32c5.567,6.879,11.167,13.76,16.727,20.629
+			C22.153,21.091,27.55,14.246,33,7.354v5.618c-5.433,6.87-10.786,13.641-16.234,20.529C11.196,26.618,5.564,19.849,0,12.971V7.32z" />
+	</g>
+	<g id="Layer_2">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#E71D25" points="22.8,27.894 18.917,16.712 21.392,16.419 18.451,5.227 11.139,5.665 15.393,13.887 11.955,14.11"/>
+	</g>
+</svg>

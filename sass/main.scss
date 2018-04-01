@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import "_bourbon/_bourbon";
+@import "_neat/_neat";
+@import "base"; 
+@import "bootstrap";   
+@import "sass-easing";
+@import "reboundgen/glideInDown";
+@import "reboundgen/glideInUp";
+@import "reboundgen/floating";
+
+@font-face {
+  font-family: 'Phosphate';
+  src: url('../fonts/phosphate.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/phosphate.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/phosphate.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+
+$sm: 480px;
+$md: 768px;
+$lg: 1200px;
+
+// Colors
+$white: #ffffff;
+$black: #000000;
+$red: #d71a21;
+
+$gray-1: #232323;
+$gray-2: #484848;
+$gray-3: #666666;
+$gray-4: #ececec;
+$gray-5: #bfbfbf;
+
+
+// Fonts
+$lato: 'Lato', sans-serif;
+$phosphate: 'Phosphate', sans-serif;
+
+
+
+// Global  
+//////////////////////
+
+* {
+  margin:0px;
+  padding:0px;
+  outline: 0px;
+  border: 0px;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding-top: 50px; 
+  font-family: $lato;
+  font-size: 10px;
+  line-height: 1.5rem;
+  color: $gray-3;
+}
+
+h1 { 
+  margin-top: 0; 
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  color: $black;
+  font-family: $phosphate;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.2em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  span {
+    display: block;
+    font-family: $lato;
+    font-size: 0.6em;
+    font-weight: 700;
+    line-height: 1.3em;
+  }
+  @media screen and ( max-width: $md ) {
+    font-size: 40px;
+  }
+}
+
+p, a, button, li, input, textarea, blockquote {
+  color: $gray-1;
+  font-size: 15px;
+  line-height: 2em;
+}
+
+blockquote {
+  color: $black;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+
+
+
+// Forms
+//////////////////////
+
+.form-control {
+  border: 2px solid $black;
+}
+
+
+
+// Links + Buttons
+//////////////////////
+
+a, button { transition: all 0.3s ease; }
+
+a.link {
+  color: $black;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover, &:focus, &:active {
+    color: $red;
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  background: $red;
+  border: 3px solid $red;
+  color: $white;
+  font-family: $phosphate;
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.btn.btn-primary {
+  &:hover, &:focus, &:active {
+    background: rgba( $white, 0.3 );
+    border: 3px solid $red;
+    color: $red;
+  }
+}
+
+.btn.btn-secondary {
+  &:hover, &:focus, &:active {
+    background: rgba( $red, 0.3 );
+    border: 3px solid $white;
+    color: $white;
+  }
+}
+
+button.down-arrow {
+  // make bouncy down-arrow on hover
+}
+
+
+
+// Decorations - bullets, borders, triangles, etc.
+//////////////////////
+
+.bullet {
+  color: $red;
+  margin-right: 10px;
+}
+
+.border-triangle {
+  background: url(../images/border-triangle-black.png) top left repeat;
+  background-size: contain;
+  bottom: -45px;
+  height: 45px;
+  position: absolute;
+  width: 100%;
+}
+
+.border-stripe {
+  background: url(../images/border-stripe.png) top left repeat;
+  background-size: contain;
+  height: 45px;
+}
+
+.border-side-triangle {
+  background: url(../images/border-triangle-white.png) top left repeat;
+  background-size: contain;
+  height: 100%;
+  max-width: 115px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.bg-triangle {
+  background: url(../images/bg-triangle.png) top left no-repeat;
+  background-size: 100% 100%;
+}
+
+
+
+// Navbar  
+//////////////////////
+
+nav { 
+  position: relative;
+  width: 100vw;
+  // Hamburget menu
+  @media screen and ( max-width: $md ) {
+    ul {
+      float: right;
+      text-align: right;
+      width: 125px;
+    }
+  }
+
+  .container-fluid { max-width: 1170px; }
+}
+
+.navbar-inverse {
+  background-color: $black;
+  font-weight: 700;
+}
+
+.navbar-nav > li {
+  > a {
+    border-bottom: 3px solid $black;  
+    font-size: 13px;
+    margin: 15px 15px 10px;
+    padding: 5px;
+    i { font-size: 20px; }
+    @media screen and ( max-width: $md ) {
+      font-size: 16px;
+    }
+  }
+  &.active a { border-bottom: 3px solid $white; }
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  border-color: $red;
+}
+
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 0;
+  margin-top: 15px;
+  padding: 0;
+  @media screen and ( max-width: $md ) {
+    margin-left: 15px;
+  }
+}
+
+.navbar-toggle {
+  margin: 15px;
+}
+
+#logo {
+  transition: width 0.3s ease;
+  width: 33vw;
+  @media screen and ( max-width: $sm ) {
+    width: 25vw;
+  }
+
+  &.shrink {
+    transition: width 0.3s ease;
+    width: 150px;
+    @media screen and ( max-width: $sm ) {
+      width: 70px;
+    }
+  }
+}
+
+
+
+// Section - Intro  
+//////////////////////
+
+section.intro {
+  background: url(../images/bg-1.jpg) top left no-repeat;
+  background-size: cover;
+  background-position: -300px 0;
+  height: 100vh;
+  padding: 15vh 0 3vh;
+  @media screen and ( max-width: $md ) {
+    background-position: -700px 0;
+    height: initial;
+    text-align: center;
+  }
+
+  h2 { 
+    font-size: 30px;
+    margin-bottom: 5px;
+    @media screen and ( max-width: $md ) {
+      text-align: right;
+    }
+  }
+
+  a { 
+    display: inline-block;
+    margin: 20px 0 30px; 
+  }
+
+  .btn-donate {
+    @media screen and ( max-width: $md ) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
+
+// Section - Contact Form  
+//////////////////////
+
+section.contact {
+  background: url(../images/bg-2.jpg) top right no-repeat;
+  background-size: cover;
+  background-position: 300px 0;
+  height: 100vh;
+  min-height: 800px;
+  padding: 100px 0;
+  @media screen and ( max-width: $md ) {
+    height: auto;
+    min-height: initial;
+    padding: 75px 0;
+  }
+  @media screen and ( max-width: $sm ) {
+    background-position: 0 0;
+    text-align: center;
+  }
+
+  h2 { 
+    margin: 0 auto 20px; 
+    text-align: center;
+    @media screen and ( max-width: $sm ) {
+      margin-bottom: 15px;
+    }
+  }
+
+  img { margin: 0 auto 30px; }
+
+  p { 
+    text-align: center; 
+    margin-bottom: 30px;
+    .bullet { margin: 0 10px; }
+  }
+}
+
+
+
+// Section - Dontate + Book  
+//////////////////////
+
+section.cta {
+  background: $black;
+  position: relative;
+  text-align: center;
+
+  h2, p {
+    color: $white;
+    margin: 0 auto 30px;
+    width: 75%;
+  }
+
+  img { 
+    margin: 0 auto 50px;
+    width: 75%;
+    @media screen and ( max-width: $md ) { 
+      margin: 0 auto;
+      width: 75vw;
+    }
+  }
+}
+
+.donate {
+  background: url(../images/bg-3.jpg) top center no-repeat;
+  background-size: cover;
+
+  .content {
+    padding: 100px 0 0;
+    @media screen and ( max-width: $md ) { padding: 75px 0; }
+  }
+}
+
+.book {
+  background: url(../images/bg-4.jpg) bottom left no-repeat;
+  background-size: contain;
+
+  .content {
+    padding: 100px 0;
+    @media screen and ( max-width: $md ) { padding: 75px 0; }
+  }
+}
+
+
+
+// Section - About  
+//////////////////////
+
+section.about {
+
+  h2 { margin: 50px 0 20px; }
+
+  p { margin-bottom: 20px; }
+
+  strong { color: $red; }
+
+  img { 
+    margin-bottom: 30px;
+    @media screen and ( max-width: $md ) { 
+      width: 75vw;
+    }
+  }
+
+  .content {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 15vh 0;
+    position: relative;
+  }
+}
+
+
+
+// Social 
+//////////////////////
+
+.social {
+  padding: 45px 0;
+  @media screen and ( max-width: $md ) { 
+    padding: 15px 0 30px;
+    text-align: center;
+  }
+
+  h2 { 
+    font-size: 4em;
+    margin: 10px 0;
+    text-align: right;
+    @media screen and ( max-width: $md ) { 
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  a {
+    font-size: 50px;
+    margin-left: 40px;
+    &:hover, &:focus, &:active {
+      color: $red;
+    }
+    @media screen and ( max-width: $md ) { 
+      margin: 0 20px;
+    }
+  }
+}
+
+
+
+
+// Footer  
+//////////////////////
+
+footer {
+  background: $red;
+  
+  p {
+    color: $white;
+    font-family: $phosphate;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+  }
+}
+

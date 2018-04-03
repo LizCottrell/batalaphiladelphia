@@ -7868,13 +7868,160 @@ section.intro a {
   }
 }
 
+section.about {
+  padding: 100px 0;
+}
+
+section.about .panel-group {
+  margin: 0 auto 20px;
+  max-width: 700px;
+}
+
+section.about .panel-group .content {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+section.about h2 {
+  text-align: center;
+}
+
+section.about h2 ~ img {
+  margin: 0 auto 50px;
+}
+
+section.about a {
+  display: block;
+}
+
+section.about p {
+  margin-bottom: 20px;
+}
+
+section.about p strong {
+  color: #d71a21;
+}
+
+section.about img {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  section.about img {
+    width: 75vw;
+  }
+}
+
+section.cta {
+  background: #000000;
+  position: relative;
+  text-align: center;
+}
+
+section.cta h2, section.cta p {
+  color: #ffffff;
+  margin: 0 auto 30px;
+  width: 75%;
+}
+
+section.cta img {
+  margin: 0 auto 50px;
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  section.cta img {
+    margin: 0 auto;
+    width: 75vw;
+  }
+}
+
+.donate {
+  background: url(../images/bg-3.jpg) top center no-repeat;
+  background-size: cover;
+}
+
+.donate .content {
+  padding: 120px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .donate .content {
+    padding: 75px 0;
+  }
+}
+
+.book {
+  background: url(../images/bg-4.jpg) bottom left no-repeat;
+  background-size: contain;
+}
+
+.book .content {
+  padding: 120px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .book .content {
+    padding: 75px 0;
+  }
+}
+
+.social {
+  background: #d71a21;
+  padding: 45px 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .social {
+    padding: 15px 0;
+  }
+}
+
+.social h2 {
+  color: #ffffff;
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+  margin: 10px 0;
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .social h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.social .icons {
+  display: inline-block;
+}
+
+.social a {
+  color: #ffffff;
+  font-size: 4vw;
+  margin-left: 40px;
+}
+
+.social a:hover, .social a:focus, .social a:active {
+  color: #d71a21;
+}
+
+@media screen and (max-width: 768px) {
+  .social a {
+    margin: 0 20px;
+  }
+}
+
 section.contact {
   background: url(../images/bg-2.jpg) top right no-repeat;
   background-size: cover;
   background-position: 300px 0;
   height: 100vh;
   min-height: 800px;
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -7916,136 +8063,13 @@ section.contact p .bullet {
   margin: 0 10px;
 }
 
-section.cta {
-  background: #000000;
-  position: relative;
-  text-align: center;
-}
-
-section.cta h2, section.cta p {
-  color: #ffffff;
-  margin: 0 auto 30px;
-  width: 75%;
-}
-
-section.cta img {
-  margin: 0 auto 50px;
-  width: 75%;
-}
-
-@media screen and (max-width: 768px) {
-  section.cta img {
-    margin: 0 auto;
-    width: 75vw;
-  }
-}
-
-.donate {
-  background: url(../images/bg-3.jpg) top center no-repeat;
-  background-size: cover;
-}
-
-.donate .content {
-  padding: 100px 0 0;
-}
-
-@media screen and (max-width: 768px) {
-  .donate .content {
-    padding: 75px 0;
-  }
-}
-
-.book {
-  background: url(../images/bg-4.jpg) bottom left no-repeat;
-  background-size: contain;
-}
-
-.book .content {
-  padding: 100px 0;
-}
-
-@media screen and (max-width: 768px) {
-  .book .content {
-    padding: 75px 0;
-  }
-}
-
-section.about h2 {
-  margin: 50px 0 20px;
-}
-
-section.about p {
-  margin-bottom: 20px;
-}
-
-section.about strong {
-  color: #d71a21;
-}
-
-section.about img {
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 768px) {
-  section.about img {
-    width: 75vw;
-  }
-}
-
-section.about .content {
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 15vh 0;
-  position: relative;
-}
-
-.social {
-  padding: 45px 0;
-}
-
-@media screen and (max-width: 768px) {
-  .social {
-    padding: 15px 0 30px;
-    text-align: center;
-  }
-}
-
-.social h2 {
-  font-size: 4em;
-  margin: 10px 0;
-  text-align: right;
-}
-
-@media screen and (max-width: 768px) {
-  .social h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
-
-.social a {
-  font-size: 50px;
-  margin-left: 40px;
-}
-
-.social a:hover, .social a:focus, .social a:active {
-  color: #d71a21;
-}
-
-@media screen and (max-width: 768px) {
-  .social a {
-    margin: 0 20px;
-  }
-}
-
 footer {
   background: #d71a21;
 }
 
 footer p {
   color: #ffffff;
-  font-family: "Phosphate", sans-serif;
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
   margin: 0 auto;

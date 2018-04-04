@@ -99,10 +99,25 @@ h2 {
   }
 }
 
-p, a, button, li, input, textarea, blockquote {
+h3 {
+  color: $white;
+  font-family: $lato;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+p, a, button, li, input, textarea, figure, blockquote {
   color: $gray-1;
   font-size: 15px;
   line-height: 2em;
+}
+
+hr {
+  border-top: 4px solid $red;
+  margin-bottom: 40px;
+  width: 50px;
 }
 
 blockquote {
@@ -136,6 +151,15 @@ a.link {
   &:hover, &:focus, &:active {
     color: $red;
     text-decoration: underline;
+  }
+}
+
+a.text-link {
+  color: $red; 
+  text-decoration: underline;
+  &:hover, &:focus, &:active {
+    color: darken( $red, 10% );
+    text-decoration: none;
   }
 }
 
@@ -186,7 +210,6 @@ button.down-arrow {
 .border-triangle {
   background: url(../images/border-triangle-black.png) top left repeat;
   background-size: contain;
-  bottom: -45px;
   height: 45px;
   position: absolute;
   width: 100%;
@@ -211,6 +234,7 @@ button.down-arrow {
 .bg-triangle {
   background: url(../images/bg-triangle.png) top left no-repeat;
   background-size: 100% 100%;
+  min-height: 100vh;
 }
 
 
@@ -236,21 +260,24 @@ nav {
 .navbar-inverse {
   background-color: $black;
   font-weight: 700;
+
+  .navbar-nav > li {
+    > a {
+      border-bottom: 3px solid $black;  
+      color: rgba( $white, 0.5 );    
+      font-size: 13px;
+      margin: 15px 15px 10px;
+      padding: 5px;
+      i { font-size: 20px; }
+      @media screen and ( max-width: $md ) {
+        font-size: 16px;
+      }
+    }
+    &.active a { border-bottom: 3px solid $white; }
+  }
 }
 
-.navbar-nav > li {
-  > a {
-    border-bottom: 3px solid $black;  
-    font-size: 13px;
-    margin: 15px 15px 10px;
-    padding: 5px;
-    i { font-size: 20px; }
-    @media screen and ( max-width: $md ) {
-      font-size: 16px;
-    }
-  }
-  &.active a { border-bottom: 3px solid $white; }
-}
+
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   border-color: $red;
@@ -294,7 +321,7 @@ section.intro {
   background: url(../images/bg-1.jpg) top left no-repeat;
   background-size: cover;
   background-position: -300px 0;
-  height: 100vh;
+  min-height: 100vh;
   padding: 15vh 0 3vh;
   @media screen and ( max-width: $md ) {
     background-position: -700px 0;
@@ -349,10 +376,24 @@ section.about {
     strong { color: $red; }
   }
 
-  img { 
-    margin-bottom: 30px;
-    @media screen and ( max-width: $md ) { 
-      width: 75vw;
+  figure {
+    clear: both;
+    img {
+      padding-right: 30px;
+      float: left;
+      width: 30%;
+    }
+
+    figcaption {
+      display: inline-block;
+      float: right;
+      margin-bottom: 30px;
+      width: 70%;
+
+      span {
+        display: block;
+        font-weight: 700;
+      }
     }
   }
 
@@ -387,9 +428,10 @@ section.cta {
 .donate {
   background: url(../images/bg-3.jpg) top center no-repeat;
   background-size: cover;
+  min-height: 80vh;
 
   .content {
-    padding: 120px 0;
+    padding-top: 120px;
     @media screen and ( max-width: $md ) { padding: 75px 0; }
   }
 }
@@ -397,9 +439,10 @@ section.cta {
 .book {
   background: url(../images/bg-4.jpg) bottom left no-repeat;
   background-size: contain;
+  min-height: 80vh;
 
   .content {
-    padding: 120px 0;
+    padding-top: 120px;
     @media screen and ( max-width: $md ) { padding: 75px 0; }
   }
 }
@@ -411,11 +454,8 @@ section.cta {
 
 .social {
   background: $red;
-  padding: 45px 0;
+  padding: 15px 0;
   text-align: center;
-  @media screen and ( max-width: $md ) { 
-    padding: 15px 0;
-  }
 
   h2 { 
     color: $white;
@@ -434,18 +474,20 @@ section.cta {
   .icons { display: inline-block; }
 
   a {
+    border-bottom: 3px solid $red;
     color: $white;
     font-size: 4vw;
     margin-left: 40px;
+    i { padding-bottom: 10px; }
     &:hover, &:focus, &:active {
-      color: $red;
+      border-bottom: 3px solid lighten( $red, 40% );
+      color: lighten( $red, 40% );
     }
     @media screen and ( max-width: $md ) { 
       margin: 0 20px;
     }
   }
 }
-
 
 
 
@@ -492,16 +534,48 @@ section.contact {
 //////////////////////
 
 footer {
-  background: $red;
+  background: $black;
+
+  a {
+    color: rgba( $white, 0.5 );
+    display: block;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+    &:hover, &:focus, &:active {
+      color: $white;
+    }
+  }
   
-  p {
-    color: $white;
-    font-size: 1.2em;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
+  form { margin-top: 30px; }
+  
+  .row {
+    padding: 100px 0;
+
+    .col:nth-child(1) {  
+      padding-right: 45px;
+    }
+    .col:nth-child(2) { 
+      border-left: 1px solid rgba( $white, 0.3 );
+      border-right: 1px solid rgba( $white, 0.3 );
+      padding: 0 45px;
+    }
+    .col:nth-child(3) { 
+      padding-left: 45px;
+    }
+  }
+  
+  .copy-right {
+    background: $red;
+
+    p {
+      color: $white;
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      margin: 0 auto;
+      padding: 15px;
+      text-align: center;
+    }
   }
 }
 

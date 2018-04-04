@@ -7651,10 +7651,25 @@ h2 span {
   }
 }
 
-p, a, button, li, input, textarea, blockquote {
+h3 {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+p, a, button, li, input, textarea, figure, blockquote {
   color: #232323;
   font-size: 15px;
   line-height: 2em;
+}
+
+hr {
+  border-top: 4px solid #d71a21;
+  margin-bottom: 40px;
+  width: 50px;
 }
 
 blockquote {
@@ -7682,6 +7697,16 @@ a.link {
 a.link:hover, a.link:focus, a.link:active {
   color: #d71a21;
   text-decoration: underline;
+}
+
+a.text-link {
+  color: #d71a21;
+  text-decoration: underline;
+}
+
+a.text-link:hover, a.text-link:focus, a.text-link:active {
+  color: #aa141a;
+  text-decoration: none;
 }
 
 .btn {
@@ -7718,7 +7743,6 @@ a.link:hover, a.link:focus, a.link:active {
 .border-triangle {
   background: url(../images/border-triangle-black.png) top left repeat;
   background-size: contain;
-  bottom: -45px;
   height: 45px;
   position: absolute;
   width: 100%;
@@ -7743,6 +7767,7 @@ a.link:hover, a.link:focus, a.link:active {
 .bg-triangle {
   background: url(../images/bg-triangle.png) top left no-repeat;
   background-size: 100% 100%;
+  min-height: 100vh;
 }
 
 nav {
@@ -7767,24 +7792,25 @@ nav .container-fluid {
   font-weight: 700;
 }
 
-.navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li > a {
   border-bottom: 3px solid #000000;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 13px;
   margin: 15px 15px 10px;
   padding: 5px;
 }
 
-.navbar-nav > li > a i {
+.navbar-inverse .navbar-nav > li > a i {
   font-size: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .navbar-nav > li > a {
+  .navbar-inverse .navbar-nav > li > a {
     font-size: 16px;
   }
 }
 
-.navbar-nav > li.active a {
+.navbar-inverse .navbar-nav > li.active a {
   border-bottom: 3px solid #ffffff;
 }
 
@@ -7834,7 +7860,7 @@ section.intro {
   background: url(../images/bg-1.jpg) top left no-repeat;
   background-size: cover;
   background-position: -300px 0;
-  height: 100vh;
+  min-height: 100vh;
   padding: 15vh 0 3vh;
 }
 
@@ -7902,14 +7928,26 @@ section.about p strong {
   color: #d71a21;
 }
 
-section.about img {
-  margin-bottom: 30px;
+section.about figure {
+  clear: both;
 }
 
-@media screen and (max-width: 768px) {
-  section.about img {
-    width: 75vw;
-  }
+section.about figure img {
+  padding-right: 30px;
+  float: left;
+  width: 30%;
+}
+
+section.about figure figcaption {
+  display: inline-block;
+  float: right;
+  margin-bottom: 30px;
+  width: 70%;
+}
+
+section.about figure figcaption span {
+  display: block;
+  font-weight: 700;
 }
 
 section.cta {
@@ -7939,10 +7977,11 @@ section.cta img {
 .donate {
   background: url(../images/bg-3.jpg) top center no-repeat;
   background-size: cover;
+  min-height: 80vh;
 }
 
 .donate .content {
-  padding: 120px 0;
+  padding-top: 120px;
 }
 
 @media screen and (max-width: 768px) {
@@ -7954,10 +7993,11 @@ section.cta img {
 .book {
   background: url(../images/bg-4.jpg) bottom left no-repeat;
   background-size: contain;
+  min-height: 80vh;
 }
 
 .book .content {
-  padding: 120px 0;
+  padding-top: 120px;
 }
 
 @media screen and (max-width: 768px) {
@@ -7968,14 +8008,8 @@ section.cta img {
 
 .social {
   background: #d71a21;
-  padding: 45px 0;
+  padding: 15px 0;
   text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .social {
-    padding: 15px 0;
-  }
 }
 
 .social h2 {
@@ -8000,13 +8034,19 @@ section.cta img {
 }
 
 .social a {
+  border-bottom: 3px solid #d71a21;
   color: #ffffff;
   font-size: 4vw;
   margin-left: 40px;
 }
 
+.social a i {
+  padding-bottom: 10px;
+}
+
 .social a:hover, .social a:focus, .social a:active {
-  color: #d71a21;
+  border-bottom: 3px solid #f8c5c7;
+  color: #f8c5c7;
 }
 
 @media screen and (max-width: 768px) {
@@ -8064,15 +8104,52 @@ section.contact p .bullet {
 }
 
 footer {
+  background: #000000;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
+
+footer a:hover, footer a:focus, footer a:active {
+  color: #ffffff;
+}
+
+footer form {
+  margin-top: 30px;
+}
+
+footer .row {
+  padding: 100px 0;
+}
+
+footer .row .col:nth-child(1) {
+  padding-right: 45px;
+}
+
+footer .row .col:nth-child(2) {
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0 45px;
+}
+
+footer .row .col:nth-child(3) {
+  padding-left: 45px;
+}
+
+footer .copy-right {
   background: #d71a21;
 }
 
-footer p {
+footer .copy-right p {
   color: #ffffff;
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
   margin: 0 auto;
-  padding: 30px;
+  padding: 15px;
   text-align: center;
 }

@@ -7741,9 +7741,14 @@ a.text-link:hover, a.text-link:focus, a.text-link:active {
   color: #ffffff;
 }
 
-.bullet {
-  color: #d71a21;
-  margin-right: 10px;
+.bg-triangle-1 {
+  background: url(../images/bg-triangle-1.png) top center no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-triangle-2 {
+  background: url(../images/bg-triangle-2.png) top center no-repeat;
+  background-size: 100% 100%;
 }
 
 .border-triangle {
@@ -7770,14 +7775,22 @@ a.text-link:hover, a.text-link:focus, a.text-link:active {
   z-index: 1;
 }
 
-.bg-triangle-1 {
-  background: url(../images/bg-triangle-1.png) top center no-repeat;
-  background-size: 100% 100%;
+.bullet {
+  color: #d71a21;
+  margin-right: 10px;
 }
 
-.bg-triangle-2 {
-  background: url(../images/bg-triangle-2.png) top center no-repeat;
-  background-size: 100% 100%;
+.img-shell {
+  margin: 0 auto 50px;
+  max-width: 500px;
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  .img-shell {
+    margin: 0 auto 35px;
+    width: 75vw;
+  }
 }
 
 nav {
@@ -7962,10 +7975,6 @@ section.about .img-bell {
   max-width: 75px;
 }
 
-section.about .img-shell {
-  margin: 0 auto 50px;
-}
-
 section.about h3 a {
   display: block;
   text-decoration: none;
@@ -8024,47 +8033,42 @@ section.cta {
 section.cta h2, section.cta p {
   color: #ffffff;
   margin: 0 auto 30px;
-  width: 75%;
-}
-
-section.cta img {
-  margin: 0 auto 50px;
+  max-width: 450px;
   width: 75%;
 }
 
 @media screen and (max-width: 768px) {
-  section.cta img {
-    margin: 35px auto 0;
-    width: 75vw;
+  section.cta .img-shell {
+    margin: 0 auto;
   }
 }
 
-.donate {
+section.cta .donate {
   background: url(../images/bg-3.jpg) top center no-repeat;
   background-size: cover;
 }
 
-.donate .content {
+section.cta .donate .content {
   padding-top: 120px;
 }
 
 @media screen and (max-width: 768px) {
-  .donate .content {
-    padding: 75px 0 0;
+  section.cta .donate .content {
+    padding: 75px 0;
   }
 }
 
-.book {
+section.cta .book {
   background: url(../images/bg-4.jpg) bottom left no-repeat;
   background-size: contain;
 }
 
-.book .content {
+section.cta .book .content {
   padding: 120px 0;
 }
 
 @media screen and (max-width: 768px) {
-  .book .content {
+  section.cta .book .content {
     padding: 75px 0;
   }
 }
@@ -8154,7 +8158,7 @@ section.contact h2 {
   }
 }
 
-section.contact img {
+section.contact .img-shell {
   margin: 0 auto 30px;
 }
 

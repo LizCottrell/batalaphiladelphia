@@ -202,12 +202,17 @@ button.down-arrow {
 
 
 
-// Decorations - bullets, borders, triangles, etc.
+// Decorations - triangle backgrounds, borders, bullets, etc.
 //////////////////////
 
-.bullet {
-  color: $red;
-  margin-right: 10px;
+.bg-triangle-1 {
+  background: url(../images/bg-triangle-1.png) top center no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-triangle-2 {
+  background: url(../images/bg-triangle-2.png) top center no-repeat;
+  background-size: 100% 100%;
 }
 
 .border-triangle {
@@ -234,14 +239,19 @@ button.down-arrow {
   z-index: 1;
 }
 
-.bg-triangle-1 {
-  background: url(../images/bg-triangle-1.png) top center no-repeat;
-  background-size: 100% 100%;
+.bullet {
+  color: $red;
+  margin-right: 10px;
 }
 
-.bg-triangle-2 {
-  background: url(../images/bg-triangle-2.png) top center no-repeat;
-  background-size: 100% 100%;
+.img-shell { 
+  margin: 0 auto 50px;
+  max-width: 500px;
+  width: 75%;
+  @media screen and ( max-width: $md ) { 
+    margin: 0 auto 35px;
+    width: 75vw;
+  }
 }
 
 
@@ -408,7 +418,6 @@ section.about {
     margin: 30px auto 0; 
     max-width: 75px;
   }
-  .img-shell { margin: 0 auto 50px; }
 
   h3 a { 
     display: block; 
@@ -465,36 +474,34 @@ section.cta {
   h2, p {
     color: $white;
     margin: 0 auto 30px;
+    max-width: 450px;
     width: 75%;
   }
 
-  img { 
-    margin: 0 auto 50px;
-    width: 75%;
+  .img-shell {
     @media screen and ( max-width: $md ) { 
-      margin: 35px auto 0;
-      width: 75vw;
+      margin: 0 auto;
     }
   }
-}
 
-.donate {
-  background: url(../images/bg-3.jpg) top center no-repeat;
-  background-size: cover;
-
-  .content {
-    padding-top: 120px;
-    @media screen and ( max-width: $md ) { padding: 75px 0 0; }
+  .donate {
+    background: url(../images/bg-3.jpg) top center no-repeat;
+    background-size: cover;
+  
+    .content {
+      padding-top: 120px;
+      @media screen and ( max-width: $md ) { padding: 75px 0; }
+    }
   }
-}
-
-.book {
-  background: url(../images/bg-4.jpg) bottom left no-repeat;
-  background-size: contain;
-
-  .content {
-    padding: 120px 0;
-    @media screen and ( max-width: $md ) { padding: 75px 0; }
+  
+  .book {
+    background: url(../images/bg-4.jpg) bottom left no-repeat;
+    background-size: contain;
+  
+    .content {
+      padding: 120px 0;
+      @media screen and ( max-width: $md ) { padding: 75px 0; }
+    }
   }
 }
 
@@ -571,7 +578,7 @@ section.contact {
     }
   }
 
-  img { margin: 0 auto 30px; }
+  .img-shell { margin: 0 auto 30px; }
 
   p { 
     text-align: center; 

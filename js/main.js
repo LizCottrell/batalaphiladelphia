@@ -1,4 +1,22 @@
 $(document).ready(function(){
+
+  // Resize logo onscroll
+  window.onscroll = function() {
+    growShrinkLogo()
+  };
+
+  function growShrinkLogo() {
+    var logo = document.getElementById("logo")
+    var border = document.getElementById("border")
+    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+      logo.classList.add("shrink");
+      border.classList.add("hidden-xs");
+    } else {
+      logo.classList.remove("shrink");
+      border.classList.remove("hidden-xs");
+    }
+  }
+
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
     if (this.hash !== "") {

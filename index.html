@@ -74,19 +74,15 @@
               <h2>Batal&aacute; <br class="visible-xs visible-sm" />Philadelphia</h2>
               <p>
                 Batal&aacute; Philadelphia is a non-profit Samba Reggae percussion band founded in 2017. We are part of the global Batal&aacute; Mundo arts project based in Salvador da Bahia, Brazil. Our mission is to enrich and inspire our communities by providing an Afro-Brazillian musical and cultural experience. We accomplish this goal through arts education and live performances. Our distinct form of musical expression and cultural heritage from Salvador da Bahia, Brazil is open to all individuals regardless of race, gender or gender identity, sexual orientation, age, or background.
+                <a class="link" href="#about"><i class="fa fa-bolt bullet"></i>More about Batal&aacute; PHL</a>
               </p>
-              <!-- <p>
-                Batal&aacute; Philadelphia performs at local events like parades and festivals. We also participate in Mundo events in nearby cities like New York and Washington. We also collaborate with Batal&aacute; bands around the country, in cities like Los Angeles, San Francisco, and Durham. Finally, because there are Batal&aacute; groups around the world, there are also opportunities for international travel, education, and collaboration.  
-              </p> -->
-
-              <a class="link" href="#about"><i class="fa fa-bolt bullet"></i>More about Batal&aacute; PHL</a>
 
               <div class="row">
                 <div class="col-xs-12 col-sm-6">
                   <a href="#donate" class="btn btn-primary btn-donate down-arrow">Donate</a>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                  <a href="#book" class="btn btn-primary down-arrow">Book us!</a>
+                  <a href="#book" class="btn btn-primary btn-book down-arrow">Book us!</a>
                 </div>      
               </div>
 
@@ -101,15 +97,16 @@
       <section id="about" class="about">
         <div class="container">
 
+          <img class="img-responsive img-bell" alt="" src="./images/bell.png">
           <h2>About</h2>
-          <img class="img-responsive" alt="" src="./images/border-shells.png">
+          <img class="img-responsive img-shell" alt="" src="./images/border-shells.png">
 
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
                 <h3 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <i class="fa fa-bolt bullet"></i>Welcome!
+                    <i class="fa fa-bolt bullet"></i>Welcome!<i class="fa fa-minus pull-right"></i>
                   </a>
                 </h3>
               </div>
@@ -135,7 +132,7 @@
               <div class="panel-heading" role="tab" id="headingTwo">
                 <h3 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <i class="fa fa-bolt bullet"></i>Our Drums
+                    <i class="fa fa-bolt bullet"></i>Our Drums<i class="fa fa-minus pull-right"></i>
                   </a>
                 </h3>
               </div>
@@ -193,7 +190,7 @@
               <div class="panel-heading" role="tab" id="headingThree">
                 <h3 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <i class="fa fa-bolt bullet"></i>Batal&aacute; Mundo
+                    <i class="fa fa-bolt bullet"></i>Batal&aacute; Mundo<i class="fa fa-minus pull-right"></i>
                   </a>
                 </h3>
               </div>
@@ -219,7 +216,7 @@
               <div class="panel-heading" role="tab" id="headingFour">
                 <h3 class="panel-title">
                   <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    <i class="fa fa-bolt bullet"></i>Mission &amp; Values
+                    <i class="fa fa-bolt bullet"></i>Mission &amp; Values<i class="fa fa-minus pull-right"></i>
                   </a>
                 </h3>
               </div>
@@ -266,7 +263,7 @@
 
           <!-- cta: donate -->
           <div id="donate" class="donate row">
-            <div class="col-xs-12 col-sm-7 col-sm-offset-2 col-md-6 col-md-offset-1 bg-triangle">
+            <div class="col col-xs-12 col-sm-7 col-sm-offset-2 col-md-6 col-md-offset-1 bg-triangle-1">
 
               <div class="content">
                 
@@ -291,7 +288,7 @@
 
            <!-- cta: book -->
            <div id="book" class="book row">
-              <div class="col-xs-12 col-sm-7 col-sm-offset-5 col-md-6 col-md-offset-5">
+              <div class="col col-xs-12 col-sm-7 col-sm-offset-5 col-md-6 col-md-offset-5 bg-triangle-2">
                 
                 <div class="content">
                   
@@ -336,23 +333,24 @@
 
               <p>
                 <i class="fa fa-bolt bullet"></i>Want to drum?<i class="fa fa-bolt bullet"></i>Collaborate?<i class="fa fa-bolt bullet"></i><br />
-                <i class="fa fa-bolt bullet"></i>Ask us something?<i class="fa fa-bolt bullet"></i>Then reach out!<i class="fa fa-bolt bullet"></i>
+                <i class="fa fa-bolt bullet"></i>Ask something?<i class="fa fa-bolt bullet"></i>Then reach out!<i class="fa fa-bolt bullet"></i>
               </p>
 
-              <form>
+              <!-- contact us form -->
+              <form id="form" method="post" action="index.php" enctype="multipart/form-data">
                 <div class="form-group">
-                  <label for="contactName" class="sr-only">Name</label>
-                  <input id="contactName" class="form-control input-lg" placeholder="Name">
+                  <label for="name" class="sr-only">Name</label>
+                  <input id="name" name="name" class="form-control input-lg" placeholder="Name" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="contactEmail" class="sr-only">Email</label>
-                  <input id="contactEmail" class="form-control input-lg" placeholder="Email">
+                  <label for="email" class="sr-only">Email</label>
+                  <input id="email" name="email" class="form-control input-lg" placeholder="Email" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="contactCategory" class="sr-only">What do you want to talk about?</label>
-                  <select id="contactCategory" class="form-control input-lg">
+                  <label for="category" class="sr-only">What do you want to talk about?</label>
+                  <select id="category" name="category" class="form-control input-lg" required>
                     <option value="" disabled selected>What do you want to talk about?</option>
                     <option value="join">Membership</option>
                     <option value="book">Booking</option>
@@ -364,11 +362,14 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="contactMessage" class="sr-only">Write your message here</label>
-                  <textarea id="contactMessage" class="form-control input-lg" placeholder="What's up?"></textarea>
+                  <label for="message" class="sr-only">Write your message here</label>
+                  <textarea id="message" name="message" class="form-control input-lg" max-length="1000" placeholder="What's up?" required></textarea>
                 </div>
 
-                <button class="btn btn-primary" type="submit">Send</button>
+                <div class="btn-wrapper">
+                  <button id="submit" name="submit" class="btn btn-primary" type="submit">Send</button>
+                </div>
+                
               </form>
 
             </div>
@@ -383,7 +384,7 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col col-xs-12  col-md-4">
+          <div class="col col-xs-12 col-sm-4">
             <h3>Batal&aacute; Philadelphia</h3>
             <hr>
             <a href="mailto:batalaphiladelphia@gmail.com">batalaphiladelphia@gmail.com</a>
@@ -394,13 +395,13 @@
               <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
           </div>
-          <div class="col col-xs-12  col-md-4">
+          <div class="col col-xs-12 col-sm-4">
             <h3>Batal&aacute; Mundo</h3>
             <hr>
             <a href="https://en.wikipedia.org/wiki/Batala_(music)" target="_blank">To learn more, see the <strong>Batal&aacute; Wikipedia</strong></a>
             <a href="http://bataladurham.com/the-bands-of-batala-mundo/" target="_blank">To see where in the world other Batal&aacute; bands exist, see our <strong>World Map</strong></a>
           </div>
-          <div class="col col-xs-12 col-md-4">
+          <div class="col col-xs-12 col-sm-4">
             <h3>Batalá neighbors</h3>
             <hr>
             <a href="https://batalanewyork.love/" target="_blank">New York City</a>
@@ -415,6 +416,18 @@
         </div>
       </div>   
     </footer>
+
+    <!-- modal -->
+    <div class="modal-wrapper">
+      <div class="modal">
+        <button class="button-close-modal js-modal-close hover-scale"><i class="fa fa-times"></i></button>
+            
+        <div class="modal-content">
+          
+        </div>
+
+      </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

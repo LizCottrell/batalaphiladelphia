@@ -7672,6 +7672,12 @@ hr {
   width: 50px;
 }
 
+@media screen and (max-width: 768px) {
+  hr {
+    margin: 20px auto;
+  }
+}
+
 blockquote {
   color: #000000;
   font-weight: 600;
@@ -7764,10 +7770,14 @@ a.text-link:hover, a.text-link:focus, a.text-link:active {
   z-index: 1;
 }
 
-.bg-triangle {
-  background: url(../images/bg-triangle.png) top left no-repeat;
+.bg-triangle-1 {
+  background: url(../images/bg-triangle-1.png) top center no-repeat;
   background-size: 100% 100%;
-  min-height: 100vh;
+}
+
+.bg-triangle-2 {
+  background: url(../images/bg-triangle-2.png) top center no-repeat;
+  background-size: 100% 100%;
 }
 
 nav {
@@ -7883,9 +7893,17 @@ section.intro h2 {
   }
 }
 
-section.intro a {
-  display: inline-block;
-  margin: 20px 0 30px;
+@media screen and (max-width: 480px) {
+  section.intro p {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 0 -15px 20px;
+    padding: 15px 30px;
+  }
+}
+
+section.intro p a {
+  display: block;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -7894,8 +7912,31 @@ section.intro a {
   }
 }
 
+@media screen and (max-width: 768px) {
+  section.intro .btn-book {
+    margin-bottom: 30px;
+  }
+}
+
 section.about {
-  padding: 100px 0;
+  background: url(../images/bg-7.jpg) top center no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  section.about {
+    padding-bottom: 50px;
+  }
+}
+
+section.about .panel-default {
+  border-color: #000000;
+}
+
+section.about .panel-default > .panel-heading {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 section.about .panel-group {
@@ -7903,7 +7944,11 @@ section.about .panel-group {
   max-width: 700px;
 }
 
-section.about .panel-group .content {
+section.about .panel-group .panel {
+  border-radius: 5px;
+}
+
+section.about .content {
   margin: 0 auto;
   max-width: 600px;
 }
@@ -7912,12 +7957,32 @@ section.about h2 {
   text-align: center;
 }
 
-section.about h2 ~ img {
+section.about .img-bell {
+  margin: 30px auto 0;
+  max-width: 75px;
+}
+
+section.about .img-shell {
   margin: 0 auto 50px;
 }
 
-section.about a {
+section.about h3 a {
   display: block;
+  text-decoration: none;
+  font-size: 1.7em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.3em;
+}
+
+@media screen and (max-width: 480px) {
+  section.about h3 a {
+    font-size: 5vw;
+  }
+}
+
+section.about h3 a .fa.pull-right {
+  margin-top: 0.3em;
 }
 
 section.about p {
@@ -7969,7 +8034,7 @@ section.cta img {
 
 @media screen and (max-width: 768px) {
   section.cta img {
-    margin: 0 auto;
+    margin: 35px auto 0;
     width: 75vw;
   }
 }
@@ -7977,7 +8042,6 @@ section.cta img {
 .donate {
   background: url(../images/bg-3.jpg) top center no-repeat;
   background-size: cover;
-  min-height: 80vh;
 }
 
 .donate .content {
@@ -7986,18 +8050,17 @@ section.cta img {
 
 @media screen and (max-width: 768px) {
   .donate .content {
-    padding: 75px 0;
+    padding: 75px 0 0;
   }
 }
 
 .book {
   background: url(../images/bg-4.jpg) bottom left no-repeat;
   background-size: contain;
-  min-height: 80vh;
 }
 
 .book .content {
-  padding-top: 120px;
+  padding: 120px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -8018,14 +8081,14 @@ section.cta img {
   font-family: "Lato", sans-serif;
   font-size: 4vw;
   font-weight: 700;
-  margin: 10px 0;
-  text-align: right;
+  margin: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .social h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    display: block;
+    font-size: 6vw;
+    margin: 10px 0 20px;
   }
 }
 
@@ -8049,8 +8112,9 @@ section.cta img {
   color: #f8c5c7;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .social a {
+    font-size: 10vw;
     margin: 0 20px;
   }
 }
@@ -8103,8 +8167,20 @@ section.contact p .bullet {
   margin: 0 10px;
 }
 
+@media screen and (max-width: 768px) {
+  section.contact .btn-wrapper {
+    text-align: center;
+  }
+}
+
 footer {
   background: #000000;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
 }
 
 footer a {
@@ -8120,14 +8196,34 @@ footer a:hover, footer a:focus, footer a:active {
 
 footer form {
   margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  footer form input {
+    margin: 0 auto;
+  }
 }
 
 footer .row {
   padding: 100px 0;
 }
 
+@media screen and (max-width: 768px) {
+  footer .row {
+    padding: 50px 0;
+  }
+}
+
 footer .row .col:nth-child(1) {
   padding-right: 45px;
+}
+
+@media screen and (max-width: 480px) {
+  footer .row .col:nth-child(1) {
+    margin-bottom: 50px;
+    padding-right: 15px;
+  }
 }
 
 footer .row .col:nth-child(2) {
@@ -8136,8 +8232,22 @@ footer .row .col:nth-child(2) {
   padding: 0 45px;
 }
 
+@media screen and (max-width: 480px) {
+  footer .row .col:nth-child(2) {
+    border: none;
+    margin-bottom: 50px;
+    padding: 0 15px;
+  }
+}
+
 footer .row .col:nth-child(3) {
   padding-left: 45px;
+}
+
+@media screen and (max-width: 480px) {
+  footer .row .col:nth-child(3) {
+    padding-left: 15px;
+  }
 }
 
 footer .copy-right {

@@ -24,4 +24,27 @@ $(document).ready(function(){
     },
     context: document.getElementById('overflow-scroll')
   })
+
+  // Form submit
+  $('#submit').on('click', function(e){
+
+		e.preventDefault();
+		name = $('input#name').val();
+    email = $('input#email').val();
+    category = $('select#category').val();
+		message = $('textarea#message').val();
+		dataString = 'name='+ name + '&email=' + email + '&category=' + category + '&message=' + message + '&submit=true';
+	  
+		$('#form').html("<div id='message'>Thank you for reaching out! You\'ll hear back from us soon!</div>");
+
+	  $.ajax({
+	    type: "POST",
+	    url: "index.php",
+	    data: dataString,
+	    success: function() {
+	    	// no needs
+	    }
+	  });
+	  return false;
+	});
 });

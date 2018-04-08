@@ -287,12 +287,18 @@ nav {
       font-size: 13px;
       margin: 15px 15px 10px;
       padding: 5px;
+      &:hover, &:focus, &:active { 
+        border-bottom: 3px solid $white; 
+      }
+
       i { font-size: 20px; }
       @media screen and ( max-width: $md ) {
         font-size: 16px;
       }
     }
-    &.active a { border-bottom: 3px solid $white; }
+    &.active a { 
+      border-bottom: 3px solid $white; 
+    }
   }
 }
 
@@ -317,6 +323,7 @@ nav {
 
 #logo {
   transition: width 0.3s ease;
+  max-width: 500px;
   width: 33vw;
   @media screen and ( max-width: $sm ) {
     width: 45vw;
@@ -562,8 +569,8 @@ section.cta {
     margin-left: 40px;
     i { padding-bottom: 10px; }
     &:hover, &:focus, &:active {
-      border-bottom: 3px solid lighten( $red, 40% );
-      color: lighten( $red, 40% );
+      border-bottom: 3px solid $black;
+      color: $black;
     }
     @media screen and ( max-width: $sm ) { 
       font-size: 10vw;

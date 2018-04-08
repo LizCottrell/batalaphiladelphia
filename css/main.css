@@ -7825,6 +7825,10 @@ nav .container-fluid {
   padding: 5px;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:active {
+  border-bottom: 3px solid #ffffff;
+}
+
 .navbar-inverse .navbar-nav > li > a i {
   font-size: 20px;
 }
@@ -7861,6 +7865,7 @@ nav .container-fluid {
 
 #logo {
   transition: width 0.3s ease;
+  max-width: 500px;
   width: 33vw;
 }
 
@@ -8138,8 +8143,8 @@ section.cta .book .content {
 }
 
 .social a:hover, .social a:focus, .social a:active {
-  border-bottom: 3px solid #f8c5c7;
-  color: #f8c5c7;
+  border-bottom: 3px solid #000000;
+  color: #000000;
 }
 
 @media screen and (max-width: 480px) {

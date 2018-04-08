@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-@import "_bourbon/_bourbon";
-@import "_neat/_neat";
-@import "base"; 
+
 @import "bootstrap";   
-@import "sass-easing";
-@import "reboundgen/glideInDown";
-@import "reboundgen/glideInUp";
-@import "reboundgen/floating";
 
 @font-face {
   font-family: 'Phosphate';
@@ -15,7 +9,7 @@
        url('../fonts/phosphate.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
-
+// Breakpoints
 $sm: 480px;
 $md: 768px;
 $lg: 1200px;
@@ -322,8 +316,8 @@ nav {
 }
 
 #logo {
-  transition: width 0.3s ease;
   max-width: 500px;
+  transition: width 0.3s ease;
   width: 33vw;
   @media screen and ( max-width: $sm ) {
     width: 45vw;
@@ -516,7 +510,9 @@ section.cta {
   }
 
   .donate {
-    background: url(../images/bg-3.jpg) top center no-repeat;
+    background: linear-gradient(to top, $black 0%, rgba(0, 0, 0, 0) 10%), url(../images/bg-3.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
     background-size: cover;
   
     .content {
@@ -553,6 +549,9 @@ section.cta {
     font-size: 4vw;
     font-weight: 700;
     margin: 0;
+    @media screen and ( min-width: $lg ) {
+      font-size: 65px;
+    }
     @media screen and ( max-width: $sm ) { 
       display: block;
       font-size: 6vw;
@@ -567,15 +566,20 @@ section.cta {
     color: $white;
     font-size: 4vw;
     margin-left: 40px;
-    i { padding-bottom: 10px; }
-    &:hover, &:focus, &:active {
-      border-bottom: 3px solid $black;
-      color: $black;
+    @media screen and ( min-width: $lg ) {
+      font-size: 65px;
     }
     @media screen and ( max-width: $sm ) { 
       font-size: 10vw;
       margin: 0 20px;
     }
+
+    i { padding-bottom: 10px; }
+
+    &:hover, &:focus, &:active {
+      border-bottom: 3px solid $black;
+      color: $black;
+    }   
   }
 }
 

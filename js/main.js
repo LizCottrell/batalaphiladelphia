@@ -10,10 +10,10 @@ $(document).ready(function(){
     var border = document.getElementById("border")
     if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
       logo.classList.add("shrink");
-      border.classList.add("hidden-xs");
+      border.classList.add("hidden");
     } else {
       logo.classList.remove("shrink");
-      border.classList.remove("hidden-xs");
+      border.classList.remove("hidden");
     }
   }
 
@@ -34,14 +34,92 @@ $(document).ready(function(){
     } 
   });
 
-  // Add waypoints for active nav items
-  var waypoint = new Waypoint({
-    element: document.getElementById('context-example'),
-    handler: function() {
-      notify('Context example triggered')
-    },
-    context: document.getElementById('overflow-scroll')
-  })
+  // Add waypoints for active nav items  
+  // no active nav items: hero space 
+  $('#intro').waypoint(function(direction) {
+    if (direction === 'up') {
+      $('#navbar li').removeClass("active");
+    }
+  }, {
+    offset: '-50%'
+  });
+  // active nav: about
+  $('#about').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#about"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '50%'
+  });
+  $('#about').waypoint(function(direction) {
+    if (direction === 'up') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#about"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '-50%'
+  });
+  // active nav: donate
+  $('#donate').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#donate"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '50%'
+  });
+  $('#donate').waypoint(function(direction) {
+    if (direction === 'up') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#donate"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '-50%'
+  });
+  // active nav: book
+  $('#book').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#book"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '50%'
+  });
+  $('#book').waypoint(function(direction) {
+    if (direction === 'up') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#book"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '-50%'
+  });
+  // active nav: contact
+  $('#contact').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#contact"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '50%'
+  });
+  $('#contact').waypoint(function(direction) {
+    if (direction === 'up') {
+      $('#navbar li').removeClass("active");
+      $(`#navbar li a[href="#contact"]`).parent().addClass("active");
+    }
+  }, {
+    offset: '-50%'
+  });
+  // no active nav items: footer 
+  $('footer').waypoint(function(direction) {
+    if (direction === 'down') {
+      $('#navbar li').removeClass("active");
+    }
+  }, {
+    offset: '50%'
+  });
+  
 
   // Form submit
   $('#submit').on('click', function(e){

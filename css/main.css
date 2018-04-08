@@ -7664,6 +7664,7 @@ p, a, button, li, input, textarea, figure, blockquote {
   color: #232323;
   font-size: 15px;
   line-height: 2em;
+  letter-spacing: 0.025em;
 }
 
 hr {
@@ -7812,6 +7813,7 @@ nav .container-fluid {
 
 .navbar-inverse {
   background-color: #000000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   font-weight: 700;
 }
 
@@ -7909,8 +7911,7 @@ section.intro h2 {
 @media screen and (max-width: 480px) {
   section.intro p {
     background-color: rgba(255, 255, 255, 0.9);
-    margin: 0 -15px 20px;
-    padding: 15px 30px;
+    box-shadow: 0 0 0.5em 0.5em rgba(255, 255, 255, 0.9);
   }
 }
 

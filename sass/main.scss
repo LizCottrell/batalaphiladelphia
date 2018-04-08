@@ -112,6 +112,7 @@ p, a, button, li, input, textarea, figure, blockquote {
   color: $gray-1;
   font-size: 15px;
   line-height: 2em;
+  letter-spacing: 0.025em;
 }
 
 hr {
@@ -262,7 +263,7 @@ button.down-arrow {
 nav { 
   position: relative;
   width: 100vw;
-  // Hamburget menu
+  // Hamburger menu
   @media screen and ( max-width: $md ) {
     ul {
       float: right;
@@ -276,6 +277,7 @@ nav {
 
 .navbar-inverse {
   background-color: $black;
+  box-shadow: 0 0 10px 0 rgba( $black, .5 );
   font-weight: 700;
 
   .navbar-nav > li {
@@ -357,8 +359,7 @@ section.intro {
   p {
     @media screen and ( max-width: $sm ) {
       background-color: rgba( $white, 0.9 );
-      margin: 0 -15px 20px;
-      padding: 15px 30px;
+      box-shadow: 0 0 0.5em 0.5em rgba( $white, 0.9 );
     }
   }
 

@@ -43,6 +43,7 @@ $(document).ready(function(){
   }, {
     offset: '-50%'
   });
+
   // active nav: about
   $('#about').waypoint(function(direction) {
     if (direction === 'down') {
@@ -60,6 +61,7 @@ $(document).ready(function(){
   }, {
     offset: '-50%'
   });
+
   // active nav: donate
   $('#donate').waypoint(function(direction) {
     if (direction === 'down') {
@@ -77,6 +79,7 @@ $(document).ready(function(){
   }, {
     offset: '-50%'
   });
+
   // active nav: book
   $('#book').waypoint(function(direction) {
     if (direction === 'down') {
@@ -94,6 +97,7 @@ $(document).ready(function(){
   }, {
     offset: '-50%'
   });
+
   // active nav: contact
   $('#contact').waypoint(function(direction) {
     if (direction === 'down') {
@@ -111,6 +115,7 @@ $(document).ready(function(){
   }, {
     offset: '-50%'
   });
+  
   // no active nav items: footer 
   $('footer').waypoint(function(direction) {
     if (direction === 'down') {

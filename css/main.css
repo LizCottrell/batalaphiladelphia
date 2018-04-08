@@ -7866,7 +7866,7 @@ nav .container-fluid {
 
 @media screen and (max-width: 480px) {
   #logo {
-    width: 25vw;
+    width: 45vw;
   }
 }
 
@@ -7882,9 +7882,10 @@ nav .container-fluid {
 }
 
 section.intro {
-  background: url(../images/bg-1.jpg) top left no-repeat;
-  background-size: cover;
+  background: url(../images/bg-1.jpg);
   background-position: -300px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   padding: 15vh 0 3vh;
 }
@@ -7897,6 +7898,12 @@ section.intro {
   }
 }
 
+@media screen and (max-width: 480px) {
+  section.intro {
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8);
+  }
+}
+
 section.intro h2 {
   font-size: 30px;
   margin-bottom: 5px;
@@ -7905,13 +7912,6 @@ section.intro h2 {
 @media screen and (max-width: 768px) {
   section.intro h2 {
     text-align: right;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  section.intro p {
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 0.5em 0.5em rgba(255, 255, 255, 0.9);
   }
 }
 
@@ -7962,6 +7962,28 @@ section.about .panel-group .panel {
   border-radius: 5px;
 }
 
+section.about .panel-body {
+  padding: 30px 15px;
+}
+
+section.about .panel-title > button:before {
+  float: right !important;
+  font-family: FontAwesome;
+  content: "\f068";
+  padding-right: 5px;
+}
+
+section.about .panel-title > button.collapsed:before {
+  float: right !important;
+  content: "\f067";
+}
+
+section.about .panel-title > button:hover,
+section.about .panel-title > button:active,
+section.about .panel-title > button:focus {
+  text-decoration: none;
+}
+
 section.about .content {
   margin: 0 auto;
   max-width: 600px;
@@ -7976,23 +7998,26 @@ section.about .img-bell {
   max-width: 75px;
 }
 
-section.about h3 a {
+section.about h3 button {
+  background-color: #000000;
+  color: #ffffff;
   display: block;
   text-decoration: none;
   font-size: 1.7em;
   font-weight: 700;
   letter-spacing: 0.2em;
   line-height: 1.3em;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 480px) {
-  section.about h3 a {
+  section.about h3 button {
     font-size: 5vw;
   }
-}
-
-section.about h3 a .fa.pull-right {
-  margin-top: 0.3em;
 }
 
 section.about p {
@@ -8149,7 +8174,7 @@ section.contact {
 }
 
 section.contact h2 {
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   text-align: center;
 }
 

@@ -17,6 +17,7 @@ $(document).ready(function(){
     }
   }
 
+
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
     if (this.hash !== "") {
@@ -33,6 +34,7 @@ $(document).ready(function(){
 
     } 
   });
+
 
   // Add waypoints for active nav items  
   // no active nav items: hero space 
@@ -126,17 +128,80 @@ $(document).ready(function(){
   });
   
 
+  // Form validation  
+
+  $("#name").change(function() {
+    var nameReg = /^[A-Za-z]+$/;
+    var name = $('#name').val();
+
+    if(name == ""){
+      $('#errorName').html('Please enter your name').show();
+      $("#name").addClass('invalid');
+    } 
+    else if(!nameReg.test(name)){
+      $('#errorName').html('Letters only').show();
+      $("#name").addClass('invalid');
+    } else { 
+      $('#errorName').hide(); 
+      $("#name").removeClass('invalid').addClass('valid');
+    }
+  });
+
+  $("#email").change(function() {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    var email = $('#email').val();
+
+    if(email == ""){
+      $('#errorEmail').html('Please enter your email address').show();
+      $("#email").addClass('invalid');
+    } 
+    else if(!emailReg.test(email)){
+      $('#errorEmail').html('Please enter a valid email address').show();
+      $("#email").addClass('invalid');
+    } else { 
+      $('#errorEmail').hide(); 
+      $("#email").removeClass('invalid').addClass('valid');
+    }
+  });
+
+  $("#category").change(function() {
+    var category = $('#category').val();
+
+    if(category == ""){
+      $('#errorCategory').html('Please choose a category').show();
+      $("#category").addClass('invalid');
+    } else { 
+      $('#errorCategory').hide(); 
+      $("#category").removeClass('invalid').addClass('valid');
+    }
+  });
+
+  $("#message").change(function() {
+    var message = $('#message').val();
+
+    if(message == ""){
+      $('#errorMessage').html('Don\'t forget to leave a message!').show();
+      $("#message").addClass('invalid');
+    } else { 
+      $('#errorMessage').hide(); 
+      $("#message").removeClass('invalid').addClass('valid');
+    }
+  });
+
+
   // Form submit
   $('#submit').on('click', function(e){
 
+    // all $('.form-control') == valid or NO SUBMIT 
+    
 		e.preventDefault();
-		name = $('input#name').val();
-    email = $('input#email').val();
-    category = $('select#category').val();
-		message = $('textarea#message').val();
+		name = $('#name').val();
+    email = $('#email').val();
+    category = $('#category').val();
+		message = $('#message').val();
 		dataString = 'name='+ name + '&email=' + email + '&category=' + category + '&message=' + message + '&submit=true';
 	  
-		$('#form').html("<div id='message'>Thank you for reaching out! You\'ll hear back from us soon!</div>");
+		$('#form').html("<p>Thank you for reaching out! You\'ll hear back from us soon!</p>");
 
 	  $.ajax({
 	    type: "POST",

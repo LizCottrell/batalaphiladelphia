@@ -339,36 +339,85 @@
 
               <!-- contact us form -->
               <form id="form" method="post" action="index.php" enctype="multipart/form-data">
+
+                <!-- name -->
                 <div class="form-group">
-                  <label for="name" class="sr-only">Name</label>
-                  <input id="name" name="name" class="form-control input-lg" placeholder="Name" required>
+                  <label for="name" class="sr-only">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control input-lg"
+                    name="name"
+                    placeholder="Name"
+                    aria-describedby="errorName"
+                    required>
+                  <span id="errorName" class="error" role="alert" aria-live="polite"></span>
                 </div>
 
+                <!-- email -->
                 <div class="form-group">
-                  <label for="email" class="sr-only">Email</label>
-                  <input id="email" name="email" class="form-control input-lg" placeholder="Email" required>
+                  <label for="email" class="sr-only">
+                    Email
+                  </label>
+                  <input 
+                    type="email"
+                    id="email"
+                    class="form-control input-lg"
+                    name="email"
+                    placeholder="Email"
+                    aria-describedby="errorEmail"
+                    required>
+                    <span id="errorEmail" class="error" role="alert" aria-live="polite"></span>
                 </div>
 
+                <!-- category -->
                 <div class="form-group">
-                  <label for="category" class="sr-only">What do you want to talk about?</label>
-                  <select id="category" name="category" class="form-control input-lg" required>
+                  <label for="category" class="sr-only">
+                    Category
+                  </label>
+                  <select 
+                    id="category" 
+                    name="category" 
+                    class="form-control input-lg" 
+                    aria-describedby="errorCategory" 
+                    required>            
                     <option value="" disabled selected>What do you want to talk about?</option>
-                    <option value="join">Membership</option>
-                    <option value="book">Booking</option>
-                    <option value="book">Donations</option>
-                    <option value="support">Volunteer Opportunities</option>
-                    <option value="collaborate">Collaboration</option>
+                    <option value="membership">Membership</option>
+                    <option value="booking">Booking</option>
+                    <option value="donations">Donations</option>
+                    <option value="volunteer">Volunteer Opportunities</option>
+                    <option value="collaboration">Collaboration</option>
                     <option value="other">Other</option>
                   </select>
+                  <span id="errorCategory" class="error" role="alert" aria-live="polite"></span>
                 </div>
 
+                <!-- message -->
                 <div class="form-group">
-                  <label for="message" class="sr-only">Write your message here</label>
-                  <textarea id="message" name="message" class="form-control input-lg" max-length="1000" placeholder="What's up?" required></textarea>
+                  <label for="message" class="sr-only">
+                    Message
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    class="form-control input-lg" 
+                    placeholder="What's up?" 
+                    aria-describedby="errorMessage" 
+                    required></textarea>
+                  <span id="errorMessage" class="error" role="alert" aria-live="polite"></span>
                 </div>
 
+                <!-- submit -->
                 <div class="btn-wrapper">
-                  <button id="submit" name="submit" class="btn btn-primary" type="submit">Send</button>
+                  <button
+                    id="submit"
+                    name="submit"
+                    class="btn btn-primary"
+                    type="submit">
+                    Send
+                  </button>
                 </div>
                 
               </form>

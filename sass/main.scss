@@ -19,6 +19,9 @@ $white: #ffffff;
 $black: #000000;
 $red: #d71a21;
 
+$danger: rgb(248, 40, 40);
+$success: rgb(46, 173, 46);
+
 $gray-1: #232323;
 $gray-2: #484848;
 $gray-3: #666666;
@@ -131,9 +134,28 @@ blockquote {
 
 .form-control {
   border: 2px solid $black;
+
+  &.valid {
+    box-shadow: inset 4px 0px 0px 0px $success;
+  }
+  &.invalid {
+    box-shadow: inset 4px 0px 0px 0px $danger;
+  }
 }
 
+.input-lg {
+  color: $gray-1;
+  font-size: 16px;
+}
 
+.error {
+  color: $danger;
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 5px 0 5px 15px;
+  text-align: left;
+}
 
 // Links + Buttons
 //////////////////////
@@ -291,6 +313,7 @@ nav {
       }
     }
     &.active a { 
+      background-color: $black;
       border-bottom: 3px solid $white; 
     }
   }

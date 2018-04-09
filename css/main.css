@@ -7126,6 +7126,30 @@ blockquote {
   border: 2px solid #000000;
 }
 
+.form-control.valid {
+  box-shadow: inset 4px 0px 0px 0px #2ead2e;
+}
+
+.form-control.invalid {
+  box-shadow: inset 4px 0px 0px 0px #f82828;
+}
+
+.input-lg, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+  color: #232323;
+  font-size: 16px;
+}
+
+.error {
+  color: #f82828;
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 5px 0 5px 15px;
+  text-align: left;
+}
+
 a, button {
   transition: all 0.3s ease;
 }
@@ -7277,6 +7301,7 @@ nav .container-fluid {
 }
 
 .navbar-inverse .navbar-nav > li.active a {
+  background-color: #000000;
   border-bottom: 3px solid #ffffff;
 }
 

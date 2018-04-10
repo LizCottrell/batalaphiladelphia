@@ -97,8 +97,12 @@
       <!-- about -->
       <section id="about" class="about">
         <div class="container">
+          <div class="images">
+            <img class="img-responsive img-bell" alt="" src="./images/pretzel.png">
+            <img class="img-responsive img-bell" alt="" src="./images/bell.png">
+            <img class="img-responsive img-bell" alt="" src="./images/cheesesteak.png">
+          </div>
 
-          <img class="img-responsive img-bell" alt="" src="./images/bell.png">
           <h2>About</h2>
           <img class="img-responsive img-shell" alt="" src="./images/border-shells.png">
 
@@ -106,12 +110,12 @@
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
                 <h3 class="panel-title">
-                  <button role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     <i class="fa fa-bolt bullet"></i>Welcome!
                   </button>
                 </h3>
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                   
                   <div class="content">
@@ -200,13 +204,13 @@
 
                   <div class="content">
                     <p>
-                      Batal&aacute; Mundo was founded by Mestre Giba Gonçalves, a Bahian percussionist, in Paris in 1997. Batal&aacute; Mundo is currently based out of Salvador da Bahia, Brazil, and includes over 40 bands in 15 countries, with a worldwide membership of over 1,200 drummers. 
+                      <a href="https://www.mundobatala.com/en/" target="_blank">Batal&aacute; Mundo</a> was founded by Mestre Giba Gonçalves, a Bahian percussionist, in Paris in 1997. Batal&aacute; Mundo is currently based out of Salvador da Bahia, Brazil, and includes over 40 bands in 15 countries, with a worldwide membership of over 1,200 drummers. 
                     </p>
                     <p>
                       As part of the Batal&aacute; Mundo community, Batal&aacute; Philadelphia plays samba reggae from Bahia, composed by Mestre Gonçalves. We also play music developed by our sister band in Salvador, Cortejo Afro.
                     </p>
                     <p>
-                      Because there are Batal&aacute; groups around the world, there are also opportunities for international travel, education, and collaboration.
+                      Because there are <a href="http://bataladurham.com/the-bands-of-batala-mundo/" target="_blank">Batal&aacute; groups around the world</a>, there are also opportunities for international travel, education, and collaboration.
                     </p>
                   </div>
 
@@ -271,7 +275,7 @@
                 <h2>Give <span>a little to make a big impact</span></h2>
                 <img class="img-responsive img-shell hidden-xs" alt="" src="./images/border-shells.png">
                 <p>
-                  <strong class="text-uppercase">Donate</strong> to help us grow and continue purchasing drums, maintaing equipment, renting practice space, costumes, etc...
+                  <strong class="text-uppercase">Donate</strong> to help us grow and continue purchasing drums, maintaing equipment, costumes, and renting practice space!
                 </p>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                   <input type="hidden" name="cmd" value="_s-xclick">
@@ -411,6 +415,7 @@
 
                 <!-- submit -->
                 <div class="btn-wrapper">
+                  <span id="errorSubmit" class="error" role="alert" aria-live="polite"></span>
                   <button
                     id="submit"
                     name="submit"
@@ -448,7 +453,7 @@
           <div class="col col-xs-12 col-sm-4">
             <h3>Batal&aacute; Mundo</h3>
             <hr>
-            <a href="https://www.mundobatala.com/en/" target="_blank">Batal&aacute; Mundo</a>
+            <a href="https://www.mundobatala.com/en/" target="_blank">Batal&aacute; Mundo website</a>
             <a href="https://en.wikipedia.org/wiki/Batala_(music)" target="_blank">To learn more, see the <strong>Batal&aacute; Wikipedia</strong></a>
             <a href="http://bataladurham.com/the-bands-of-batala-mundo/" target="_blank">To see where in the world other Batal&aacute; bands exist, see our <strong>World Map</strong></a>
           </div>

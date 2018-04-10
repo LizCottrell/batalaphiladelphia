@@ -7248,7 +7248,7 @@ a.text-link:hover, a.text-link:focus, a.text-link:active {
   width: 75%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .img-shell {
     margin: 0 auto 35px;
     width: 75vw;
@@ -7258,6 +7258,21 @@ a.text-link:hover, a.text-link:focus, a.text-link:active {
 nav {
   position: relative;
   width: 100vw;
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  nav .navbar-collapse.collapse {
+    display: none !important;
+  }
+  nav .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  nav .navbar-header .collapse, nav .navbar-toggle {
+    display: block !important;
+  }
+  nav .navbar-header {
+    float: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -7354,7 +7369,7 @@ section.intro {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  padding: 15vh 0 3vh;
+  padding: 15vh 0 10vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -7460,9 +7475,22 @@ section.about h2 {
   text-align: center;
 }
 
-section.about .img-bell {
-  margin: 30px auto 0;
-  max-width: 75px;
+section.about .images {
+  margin-top: 50px;
+  text-align: center;
+}
+
+section.about .images img {
+  display: inline-block;
+  margin: 0 15px;
+  max-width: 100px;
+}
+
+@media screen and (max-width: 480px) {
+  section.about .images img {
+    margin: 0 10px;
+    max-width: 25%;
+  }
 }
 
 section.about h3 button {
@@ -7495,6 +7523,17 @@ section.about p strong {
   color: #d71a21;
 }
 
+section.about p a {
+  color: #d71a21;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+section.about p a:hover, section.about p a:focus, section.about p a:active {
+  color: #7c0f13;
+  text-decoration: none;
+}
+
 section.about figure {
   clear: both;
 }
@@ -7502,7 +7541,18 @@ section.about figure {
 section.about figure img {
   padding-right: 30px;
   float: left;
+  margin: 0 auto 30px;
   width: 30%;
+}
+
+@media screen and (max-width: 480px) {
+  section.about figure img {
+    display: block;
+    float: none;
+    max-width: 150px;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 section.about figure figcaption {
@@ -7512,9 +7562,23 @@ section.about figure figcaption {
   width: 70%;
 }
 
+@media screen and (max-width: 480px) {
+  section.about figure figcaption {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+}
+
 section.about figure figcaption span {
   display: block;
   font-weight: 700;
+}
+
+@media screen and (max-width: 480px) {
+  section.about figure figcaption span {
+    text-align: center;
+  }
 }
 
 section.cta {
@@ -7570,8 +7634,14 @@ section.cta .book .content {
 
 .social {
   background: #d71a21;
-  padding: 15px 0;
+  padding: 30px 0;
   text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .social {
+    padding: 15px 0;
+  }
 }
 
 .social h2 {
@@ -7674,6 +7744,12 @@ section.contact p {
   margin-bottom: 30px;
 }
 
+section.contact p.thankyou {
+  font-size: 24px;
+  font-weight: 700px;
+  line-height: 1.5em;
+}
+
 section.contact p .bullet {
   margin: 0 10px;
 }
@@ -7730,10 +7806,15 @@ footer .row .col:nth-child(1) {
   padding-right: 45px;
 }
 
+@media screen and (max-width: 768px) {
+  footer .row .col:nth-child(1) {
+    padding-right: 15px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   footer .row .col:nth-child(1) {
     margin-bottom: 50px;
-    padding-right: 15px;
   }
 }
 
@@ -7743,11 +7824,16 @@ footer .row .col:nth-child(2) {
   padding: 0 45px;
 }
 
+@media screen and (max-width: 768px) {
+  footer .row .col:nth-child(2) {
+    padding: 0 15px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   footer .row .col:nth-child(2) {
     border: none;
     margin-bottom: 50px;
-    padding: 0 15px;
   }
 }
 
@@ -7755,7 +7841,7 @@ footer .row .col:nth-child(3) {
   padding-left: 45px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   footer .row .col:nth-child(3) {
     padding-left: 15px;
   }

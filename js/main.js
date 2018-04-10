@@ -192,25 +192,33 @@ $(document).ready(function(){
   // Form submit
   $('#submit').on('click', function(e){
 
-    // all $('.form-control') == valid or NO SUBMIT 
+    if( $('.form-control').length == $('.form-control\.valid').length ){
     
-		e.preventDefault();
-		name = $('#name').val();
-    email = $('#email').val();
-    category = $('#category').val();
-		message = $('#message').val();
-		dataString = 'name='+ name + '&email=' + email + '&category=' + category + '&message=' + message + '&submit=true';
-	  
-		$('#form').html("<p>Thank you for reaching out! You\'ll hear back from us soon!</p>");
+      e.preventDefault();
+      name = $('#name').val();
+      email = $('#email').val();
+      category = $('#category').val();
+      message = $('#message').val();
+      dataString = 'name='+ name + '&email=' + email + '&category=' + category + '&message=' + message + '&submit=true';
+      
+      $('#form').html("<p class=\"thankyou\">Thank you for reaching out!<br> You\'ll hear back from us soon!</p>");
 
-	  $.ajax({
-	    type: "POST",
-	    url: "index.php",
-	    data: dataString,
-	    success: function() {
-	    	// no needs
-	    }
-	  });
-	  return false;
+      $.ajax({
+        type: "POST",
+        url: "index.php",
+        data: dataString,
+        success: function() {
+          // no needs
+        }
+      });
+      return false;
+
+    } else {
+
+      e.preventDefault();
+      $('#errorSubmit').html('Fill out all fields to send a message!').show();
+    
+    }
+
 	});
 });

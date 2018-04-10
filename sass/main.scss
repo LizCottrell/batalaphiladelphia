@@ -265,7 +265,7 @@ button.down-arrow {
   margin: 0 auto 50px;
   max-width: 500px;
   width: 75%;
-  @media screen and ( max-width: $md ) { 
+  @media screen and ( max-width: $sm ) { 
     margin: 0 auto 35px;
     width: 75vw;
   }
@@ -280,6 +280,20 @@ nav {
   position: relative;
   width: 100vw;
   // Hamburger menu
+  @media (min-width: 768px) and (max-width: 900px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+  }
   @media screen and ( max-width: $md ) {
     ul {
       float: right;
@@ -318,8 +332,6 @@ nav {
     }
   }
 }
-
-
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   border-color: $red;
@@ -366,7 +378,7 @@ section.intro {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  padding: 15vh 0 3vh;
+  padding: 15vh 0 10vh;
   @media screen and ( max-width: $md ) {
     background-position: -700px 0;
     height: initial;
@@ -457,9 +469,20 @@ section.about {
   }
 
   h2 { text-align: center; }
-  .img-bell { 
-    margin: 30px auto 0; 
-    max-width: 75px;
+
+  .images {
+    margin-top: 50px; 
+    text-align: center; 
+
+    img {
+      display: inline-block;
+      margin: 0 15px; 
+      max-width: 100px;
+      @media screen and ( max-width: $sm ) {
+        margin: 0 10px; 
+        max-width: 25%;
+      }
+    } 
   }
 
   h3 button { 
@@ -484,6 +507,15 @@ section.about {
   p { 
     margin-bottom: 20px;
     strong { color: $red; }
+    a {
+      color: $red;
+      font-weight: 700;
+      text-decoration: underline;
+      &:hover, &:focus, &:active {
+        color: darken( $red, 20% );
+        text-decoration: none;
+      }
+    }
   }
 
   figure {
@@ -491,7 +523,15 @@ section.about {
     img {
       padding-right: 30px;
       float: left;
+      margin: 0 auto 30px;
       width: 30%;
+      @media screen and ( max-width: $sm ) {
+        display: block;
+        float: none;
+        max-width: 150px;
+        padding: 0;
+        width: 100%;
+      }
     }
 
     figcaption {
@@ -499,10 +539,18 @@ section.about {
       float: right;
       margin-bottom: 30px;
       width: 70%;
+      @media screen and ( max-width: $sm ) {
+        display: block;
+        float: none;
+        width: 100%;
+      }
 
       span {
         display: block;
         font-weight: 700;
+        @media screen and ( max-width: $sm ) {
+          text-align: center;
+        }
       }
     }
   }
@@ -562,8 +610,11 @@ section.cta {
 
 .social {
   background: $red;
-  padding: 15px 0;
+  padding: 30px 0;
   text-align: center;
+  @media screen and ( max-width: $sm ) {
+    padding: 15px 0;
+  }
 
   h2 { 
     color: $white;
@@ -641,6 +692,13 @@ section.contact {
   p { 
     text-align: center; 
     margin-bottom: 30px;
+    
+    &.thankyou {
+      font-size: 24px;
+      font-weight: 700px;
+      line-height: 1.5em;
+    }
+
     .bullet { margin: 0 10px; }
   }
 
@@ -688,24 +746,28 @@ footer {
 
     .col:nth-child(1) {  
       padding-right: 45px;
+      @media screen and ( max-width: $md ) {
+        padding-right: 15px;
+      }
       @media screen and ( max-width: $sm ) {
         margin-bottom: 50px;
-        padding-right: 15px;
       }
     }
     .col:nth-child(2) { 
       border-left: 1px solid rgba( $white, 0.3 );
       border-right: 1px solid rgba( $white, 0.3 );
       padding: 0 45px;
+      @media screen and ( max-width: $md ) {
+        padding: 0 15px;
+      }
       @media screen and ( max-width: $sm ) {
         border: none;
         margin-bottom: 50px;
-        padding: 0 15px;
       }
     }
     .col:nth-child(3) { 
       padding-left: 45px;
-      @media screen and ( max-width: $sm ) {
+      @media screen and ( max-width: $md ) {
         padding-left: 15px;
       }
     }

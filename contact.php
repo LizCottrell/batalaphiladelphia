@@ -3,8 +3,8 @@
     $email = $_POST['email'];
     $subject = $_POST['category'];
     $message = $_POST['message'];
-    $from = 'Website Contact Submission'; 
-    $to = 'elizabeth.cottrell@gmail.com'; 
+    $from = 'batalaphiladelphia contact form'; 
+    $to = 'batala.philly@gmail.com'; 
     
     		
     $body = "From: $name\n E-Mail: $email\n Category: $subject\n Message:\n $message";

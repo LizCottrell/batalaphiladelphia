@@ -205,7 +205,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: "POST",
-        url: "index.php",
+        url: "contact.php",
         data: dataString,
         success: function() {
           // no needs

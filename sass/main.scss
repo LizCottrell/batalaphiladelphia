@@ -62,11 +62,7 @@ body {
   color: $gray-3;
 }
 
-h1 { 
-  margin-top: 0; 
-  position: relative;
-  z-index: 1;
-}
+
 
 h2 {
   color: $black;
@@ -96,6 +92,26 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+h4 {
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+p a {
+  color: $red;
+  font-weight: 700;
+  text-decoration: underline;
+  &:hover, &:focus, &:active {
+    color: darken( $red, 20% );
+    text-decoration: none;
+  }
 }
 
 p, a, button, li, input, textarea, figure, blockquote {
@@ -137,8 +153,14 @@ blockquote {
 }
 
 .input-lg {
+  border-radius: 5px;
   color: $gray-1;
   font-size: 16px;
+}
+
+.input-sm {
+  border-radius: 5px;
+  height: 40px;
 }
 
 .error {
@@ -300,6 +322,7 @@ nav {
 
 .navbar-inverse {
   background-color: $black;
+  border-bottom: 4px solid $red;
   box-shadow: 0 0 10px 0 rgba( $black, .5 );
   font-weight: 700;
 
@@ -343,6 +366,11 @@ nav {
   margin: 15px;
 }
 
+.navbar-brand { 
+  margin-top: 0; 
+  position: relative;
+  z-index: 1;
+}
 #logo {
   max-width: 500px;
   transition: width 0.3s ease;
@@ -381,7 +409,8 @@ section.intro {
     box-shadow: inset 0 0 0 1000px rgba( $white, 0.8 );
   }
 
-  h2 { 
+  h1 { 
+    @extend h2;
     font-size: 30px;
     margin-bottom: 5px;
     @media screen and ( max-width: $md ) {
@@ -389,7 +418,7 @@ section.intro {
     }
   }
 
-  p a { 
+  p a.link { 
     display: block;
     margin: 20px 0; 
   }  
@@ -412,7 +441,7 @@ section.intro {
 //////////////////////
 
 section.about {
-  background: url(../images/bg-7.jpg) top center no-repeat;
+  background: url(../images/bg-5.jpg) top center no-repeat;
   background-size: cover;
   padding-bottom: 100px;
   @media screen and ( max-width: $md ) {
@@ -511,15 +540,6 @@ section.about {
   p { 
     margin-bottom: 20px;
     strong { color: $red; }
-    a {
-      color: $red;
-      font-weight: 700;
-      text-decoration: underline;
-      &:hover, &:focus, &:active {
-        color: darken( $red, 20% );
-        text-decoration: none;
-      }
-    }
   }
 
   figure {
@@ -731,32 +751,52 @@ footer {
     color: rgba( $white, 0.75 );
     font-weight: 700;
     line-height: 1.5em;
+    text-decoration: none;
     &:hover, &:focus, &:active {
       color: $white;
+      text-decoration: underline;
     }
   }
   
   form { 
-    margin-top: 30px; 
     margin-bottom: 20px;
+
+    input { 
+      display: block;
+      max-width: 300px;
+      width: 100%; 
+      @media screen and ( max-width: $md ) {
+        margin: 0 auto;
+      }
+    }
+    .btn { 
+      font-size: 2em; 
+      max-width: 175px;
+    }
+  }
+
+  .img-shell {
+    margin: 40px 0;
+    max-width: 250px;
     @media screen and ( max-width: $md ) {
-      input { margin: 0 auto; }
+      margin: 30px auto;
     }
   }
   
   .row {
+    align-items: stretch;
+    display: flex;
     padding: 100px 0;
     @media screen and ( max-width: $md ) {
+      display: block;
       padding: 50px 0;
     }
 
     .col:nth-child(1) {  
       padding-right: 45px;
       @media screen and ( max-width: $md ) {
-        padding-right: 15px;
-      }
-      @media screen and ( max-width: $sm ) {
         margin-bottom: 50px;
+        padding-right: 15px;
       }
     }
     .col:nth-child(2) { 
@@ -765,10 +805,8 @@ footer {
       padding: 0 45px;
       @media screen and ( max-width: $md ) {
         border: none;
-        padding: 0 15px;
-      }
-      @media screen and ( max-width: $sm ) {
         margin-bottom: 50px;
+        padding: 0 15px;
       }
     }
     .col:nth-child(3) { 

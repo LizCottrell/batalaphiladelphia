@@ -258,11 +258,12 @@ th {
   }
   p,
   h2,
+  section.intro h1,
   h3 {
     orphans: 3;
     widows: 3;
   }
-  h2,
+  h2, section.intro h1,
   h3 {
     page-break-after: avoid;
   }
@@ -1226,7 +1227,7 @@ hr {
   clip: auto;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1, h2, section.intro h1, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1235,8 +1236,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 small,
-h1 .small, h2 small,
-h2 .small, h3 small,
+h1 .small, h2 small, section.intro h1 small,
+h2 .small, section.intro h1 .small, h3 small,
 h3 .small, h4 small,
 h4 .small, h5 small,
 h5 .small, h6 small,
@@ -1254,7 +1255,8 @@ h6 .small,
 }
 
 h1, .h1,
-h2, .h2,
+h2,
+section.intro h1, .h2,
 h3, .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -1263,8 +1265,8 @@ h3, .h3 {
 h1 small,
 h1 .small, .h1 small,
 .h1 .small,
-h2 small,
-h2 .small, .h2 small,
+h2 small, section.intro h1 small,
+h2 .small, section.intro h1 .small, .h2 small,
 .h2 .small,
 h3 small,
 h3 .small, .h3 small,
@@ -1295,7 +1297,7 @@ h1, .h1 {
   font-size: 36px;
 }
 
-h2, .h2 {
+h2, section.intro h1, .h2 {
   font-size: 30px;
 }
 
@@ -7050,13 +7052,7 @@ body {
   color: #666666;
 }
 
-h1 {
-  margin-top: 0;
-  position: relative;
-  z-index: 1;
-}
-
-h2 {
+h2, section.intro h1 {
   color: #000000;
   font-family: "Phosphate", sans-serif;
   font-size: 50px;
@@ -7067,7 +7063,7 @@ h2 {
   text-transform: uppercase;
 }
 
-h2 span {
+h2 span, section.intro h1 span {
   display: block;
   font-family: "Lato", sans-serif;
   font-size: 0.6em;
@@ -7076,7 +7072,7 @@ h2 span {
 }
 
 @media screen and (max-width: 768px) {
-  h2 {
+  h2, section.intro h1 {
     font-size: 40px;
   }
 }
@@ -7088,6 +7084,27 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+p a {
+  color: #d71a21;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+p a:hover, p a:focus, p a:active {
+  color: #7c0f13;
+  text-decoration: none;
 }
 
 p, a, button, li, input, textarea, figure, blockquote {
@@ -7130,8 +7147,16 @@ blockquote {
 .input-lg, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
+  border-radius: 5px;
   color: #232323;
   font-size: 16px;
+}
+
+.input-sm, .form-horizontal .form-group-sm .form-control, .input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  border-radius: 5px;
+  height: 40px;
 }
 
 .error {
@@ -7282,6 +7307,7 @@ nav .container-fluid {
 
 .navbar-inverse {
   background-color: #000000;
+  border-bottom: 4px solid #d71a21;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   font-weight: 700;
 }
@@ -7333,6 +7359,12 @@ nav .container-fluid {
   margin: 15px;
 }
 
+.navbar-brand {
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
 #logo {
   max-width: 500px;
   transition: width 0.3s ease;
@@ -7379,18 +7411,18 @@ section.intro {
   }
 }
 
-section.intro h2 {
+section.intro h1 {
   font-size: 30px;
   margin-bottom: 5px;
 }
 
 @media screen and (max-width: 768px) {
-  section.intro h2 {
+  section.intro h1 {
     text-align: right;
   }
 }
 
-section.intro p a {
+section.intro p a.link {
   display: block;
   margin: 20px 0;
 }
@@ -7408,7 +7440,7 @@ section.intro p a {
 }
 
 section.about {
-  background: url(../images/bg-7.jpg) top center no-repeat;
+  background: url(../images/bg-5.jpg) top center no-repeat;
   background-size: cover;
   padding-bottom: 100px;
 }
@@ -7464,7 +7496,7 @@ section.about .content {
   max-width: 600px;
 }
 
-section.about h2 {
+section.about h2, section.about section.intro h1, section.intro section.about h1 {
   text-align: center;
 }
 
@@ -7531,17 +7563,6 @@ section.about p strong {
   color: #d71a21;
 }
 
-section.about p a {
-  color: #d71a21;
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-section.about p a:hover, section.about p a:focus, section.about p a:active {
-  color: #7c0f13;
-  text-decoration: none;
-}
-
 section.about figure {
   clear: both;
 }
@@ -7595,7 +7616,7 @@ section.cta {
   text-align: center;
 }
 
-section.cta h2, section.cta p {
+section.cta h2, section.cta section.intro h1, section.intro section.cta h1, section.cta p {
   color: #ffffff;
   margin: 0 auto 30px;
   max-width: 450px;
@@ -7652,7 +7673,7 @@ section.cta .book .content {
   }
 }
 
-.social h2 {
+.social h2, .social section.intro h1, section.intro .social h1 {
   color: #ffffff;
   display: inline-block;
   font-family: "Lato", sans-serif;
@@ -7662,13 +7683,13 @@ section.cta .book .content {
 }
 
 @media screen and (min-width: 1200px) {
-  .social h2 {
+  .social h2, .social section.intro h1, section.intro .social h1 {
     font-size: 65px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .social h2 {
+  .social h2, .social section.intro h1, section.intro .social h1 {
     display: block;
     font-size: 6vw;
     margin: 10px 0 20px;
@@ -7733,13 +7754,13 @@ section.contact {
   }
 }
 
-section.contact h2 {
+section.contact h2, section.contact section.intro h1, section.intro section.contact h1 {
   margin: 0 auto 30px;
   text-align: center;
 }
 
 @media screen and (max-width: 480px) {
-  section.contact h2 {
+  section.contact h2, section.contact section.intro h1, section.intro section.contact h1 {
     margin-bottom: 15px;
   }
 }
@@ -7787,15 +7808,22 @@ footer a {
   color: rgba(255, 255, 255, 0.75);
   font-weight: 700;
   line-height: 1.5em;
+  text-decoration: none;
 }
 
 footer a:hover, footer a:focus, footer a:active {
   color: #ffffff;
+  text-decoration: underline;
 }
 
 footer form {
-  margin-top: 30px;
   margin-bottom: 20px;
+}
+
+footer form input {
+  display: block;
+  max-width: 300px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -7804,12 +7832,31 @@ footer form {
   }
 }
 
+footer form .btn {
+  font-size: 2em;
+  max-width: 175px;
+}
+
+footer .img-shell {
+  margin: 40px 0;
+  max-width: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  footer .img-shell {
+    margin: 30px auto;
+  }
+}
+
 footer .row {
+  align-items: stretch;
+  display: flex;
   padding: 100px 0;
 }
 
 @media screen and (max-width: 768px) {
   footer .row {
+    display: block;
     padding: 50px 0;
   }
 }
@@ -7820,13 +7867,8 @@ footer .row .col:nth-child(1) {
 
 @media screen and (max-width: 768px) {
   footer .row .col:nth-child(1) {
-    padding-right: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  footer .row .col:nth-child(1) {
     margin-bottom: 50px;
+    padding-right: 15px;
   }
 }
 
@@ -7839,13 +7881,8 @@ footer .row .col:nth-child(2) {
 @media screen and (max-width: 768px) {
   footer .row .col:nth-child(2) {
     border: none;
-    padding: 0 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  footer .row .col:nth-child(2) {
     margin-bottom: 50px;
+    padding: 0 15px;
   }
 }
 

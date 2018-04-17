@@ -192,7 +192,7 @@ $(document).ready(function(){
   // Form submit
   $('#submit').on('click', function(e){
 
-    if( $('.form-control').length == $('.form-control\.valid').length ){
+    if( $('.contact-form-field').length == $('.contact-form-field\.valid').length ){
     
       e.preventDefault();
       name = $('#name').val();

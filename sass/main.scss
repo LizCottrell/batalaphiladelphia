@@ -116,9 +116,12 @@ p a {
 
 p, a, button, li, input, textarea, figure, blockquote {
   color: $gray-1;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2em;
   letter-spacing: 0.025em;
+  @media screen and ( max-width: $lg ) {
+    font-size: 14px;
+  }
 }
 
 hr {
@@ -402,26 +405,30 @@ section.intro {
   padding: 15vh 0 10vh;
   @media screen and ( max-width: $md ) {
     background-position: -700px 0;
+    box-shadow: inset 0 0 0 1000px rgba( $white, 0.8 );
     height: initial;
     text-align: center;
-  }
-  @media screen and ( max-width: $sm ) {
-    box-shadow: inset 0 0 0 1000px rgba( $white, 0.8 );
   }
 
   h1 { 
     @extend h2;
     font-size: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     @media screen and ( max-width: $md ) {
       text-align: right;
     }
   }
 
-  p a.link { 
-    display: block;
-    margin: 20px 0; 
+  p {
+    font-size: 16px;
+    text-align: left;
   }  
+
+  a.link { 
+    display: block;
+    font-size: 16px;
+    margin: 20px 0;
+  }
 
   .btn-donate {
     @media screen and ( max-width: $md ) {
@@ -745,10 +752,14 @@ footer {
     text-align: center;
   }
 
-  p { color: rgba( $white, 0.5 ); }
+  p { 
+    color: rgba( $white, 0.5 ); 
+    font-size: 13px;
+  }
 
   a {
     color: rgba( $white, 0.75 );
+    font-size: 13px;
     font-weight: 700;
     line-height: 1.5em;
     text-decoration: none;

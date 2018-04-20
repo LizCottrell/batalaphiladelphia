@@ -7109,9 +7109,15 @@ p a:hover, p a:focus, p a:active {
 
 p, a, button, li, input, textarea, figure, blockquote {
   color: #232323;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2em;
   letter-spacing: 0.025em;
+}
+
+@media screen and (max-width: 1200px) {
+  p, a, button, li, input, textarea, figure, blockquote {
+    font-size: 14px;
+  }
 }
 
 hr {
@@ -7400,20 +7406,15 @@ section.intro {
 @media screen and (max-width: 768px) {
   section.intro {
     background-position: -700px 0;
+    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8);
     height: initial;
     text-align: center;
   }
 }
 
-@media screen and (max-width: 480px) {
-  section.intro {
-    box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.8);
-  }
-}
-
 section.intro h1 {
   font-size: 30px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 768px) {
@@ -7422,8 +7423,14 @@ section.intro h1 {
   }
 }
 
-section.intro p a.link {
+section.intro p {
+  font-size: 16px;
+  text-align: left;
+}
+
+section.intro a.link {
   display: block;
+  font-size: 16px;
   margin: 20px 0;
 }
 
@@ -7802,10 +7809,12 @@ footer {
 
 footer p {
   color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
 }
 
 footer a {
   color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.5em;
   text-decoration: none;
